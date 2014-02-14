@@ -1,5 +1,5 @@
 class ApartmentsController < ApplicationController
-  include ApplicationHelper
+  before_action :authenticate!
   before_action(:load_apartment, {only: [:show, :edit, :update, :destroy]})
 
   def new
@@ -7,6 +7,7 @@ class ApartmentsController < ApplicationController
   end
 
   def create
+    binding.pry
     @apartment = Apartment.create(apartment_params)
     redirect_to apartment_path(@apartment)
   end
@@ -19,6 +20,11 @@ class ApartmentsController < ApplicationController
   end
 
   def apartment_params
-    params.require(:apartment).permit(:address, :price, :lease_length, :bedrooms, :bathrooms, :description, :contact_name, :phone_number, :email, :photo_url)
+    params.require(:apartment).permit(:address, :price, :lease_length, :bedrooms, :bathrooms, :description, :contact_name, :phone_number, :email, :photo_url, :landlord_id)
+  end
+
+  def check_login
+    #binding.pry
+    redirect_to login_path unless session[:user_id]
   end
 end

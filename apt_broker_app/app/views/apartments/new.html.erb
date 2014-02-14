@@ -4,7 +4,7 @@
 
   <%= f.label :price %>
   <%= f.text_field :price %>
-  <!-- dunno if this is a thing -->
+<!--   should there be a different field for integers/money -->
 
   <%= f.label :lease_length %>
   <%= f.text_field :lease_length %>
@@ -29,6 +29,9 @@
 
   <%= f.label :photo_url %>
   <%= f.url_field :photo_url %>
+
+  <%= f.label :landlord_id %>
+  <%= f.collection_select :landlord_id, Landlord.order(:name), :id, :name, include_blank: true %>
 
   <%= f.submit %>
 <% end %>

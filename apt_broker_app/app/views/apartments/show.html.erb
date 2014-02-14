@@ -1,1 +1,17 @@
-Show Page for Apt
+<h1><%= @apartment.address %></h1>
+<img src="<%= @apartment.photo_url %>" width="300px"/>
+
+<ul>
+  <li>Price: <%= @apartment.price %></li>
+  <li>Lease (months:) <%= @apartment.lease_length %></li>
+  <li>Bedrooms: <%= @apartment.bedrooms %></li>
+  <li>Bathrooms: <%= @apartment.bathrooms %></li>
+  <li>Descritpion: <%= @apartment.description %></li>
+  <li>Contact Name: <%= @apartment.contact_name %></li>
+  <li>Phone Number <%= @apartment.phone_number %></li>
+  <li>Email: <%= @apartment.email %></li>
+  <li>Landlord: <%= @apartment.landlord.name %></li>
+
+
+
+</ul>

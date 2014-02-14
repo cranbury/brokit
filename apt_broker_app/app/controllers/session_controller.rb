@@ -1,7 +1,7 @@
 class SessionController < ApplicationController
 
+
   def new
-    render(:new)
   end
 
   def create
@@ -11,23 +11,21 @@ class SessionController < ApplicationController
     # if that user exists and it has a password that
     # was sent
     if user && ( user.authenticate(params[:password]) )
-      
       # save the user_id in the session hash
-      session[:user_id] = user.id
-
+      login(user)
+      flash[:notice] = "Welcome back, #{@user.first_name}!"
       # and redirect to that user's home page
       redirect_to( user_path(user) )
     else
-
       # the email/password is wrong!
-      @message = "This email and password combination does not exist."
-      render(:new)
+      flash[:notice] = "Failed Login. Try again."
+      redirect_to new_session_path
     end
   end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to login_path
+    logout
+    authenticate!
   end
 
 end
