@@ -35,6 +35,10 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+gem 'geocoder'
+
+gem 'httparty'
+
 gem 'pry-rails', group: :development
 
 # Use unicorn as the app server

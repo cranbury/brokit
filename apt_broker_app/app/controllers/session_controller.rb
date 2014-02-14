@@ -13,7 +13,7 @@ class SessionController < ApplicationController
     if user && ( user.authenticate(params[:password]) )
       # save the user_id in the session hash
       login(user)
-      flash[:notice] = "Welcome back, #{@user.first_name}!"
+      flash[:notice] = "Welcome back, #{user.first_name}!"
       # and redirect to that user's home page
       redirect_to( user_path(user) )
     else
