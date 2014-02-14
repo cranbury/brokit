@@ -1,0 +1,34 @@
+<%= form_for @apartment do |f| %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <!-- dunno if this is a thing -->
+
+  <%= f.label :lease_length %>
+  <%= f.text_field :lease_length %>
+
+  <%= f.label :bedrooms %>
+  <%= f.text_field :bedrooms %>
+
+  <%= f.label :bathrooms %>
+  <%= f.text_field :bathrooms %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :contact_name %>
+  <%= f.text_field :contact_name %>
+
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :photo_url %>
+  <%= f.url_field :photo_url %>
+
+  <%= f.submit %>
+<% end %>
