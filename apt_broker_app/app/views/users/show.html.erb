@@ -3,3 +3,9 @@ User Page
 
 Search
 
+
+<%= form_tag user_path(@user), method: :get do %>
+
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", name: nil %>
+<% end %>

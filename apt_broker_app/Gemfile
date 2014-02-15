@@ -39,6 +39,9 @@ gem 'geocoder'
 
 gem 'httparty'
 
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+
 gem 'pry-rails', group: :development
 
 # Use unicorn as the app server

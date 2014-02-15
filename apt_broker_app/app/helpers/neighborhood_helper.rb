@@ -1,4 +1,4 @@
-module FindHelper
+module NeighborhoodHelper
   def ny_search(search)
     HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{search.gsub(" ", "+")},+New+York,+NY&sensor=true&key=#{google_key}")
   end

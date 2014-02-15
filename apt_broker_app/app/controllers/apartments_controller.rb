@@ -2,7 +2,7 @@ class ApartmentsController < ApplicationController
   before_action :authenticate!
   before_action(:load_apartment, {only: [:show, :edit, :update, :destroy]})
 
-  include FindHelper
+  include NeighborhoodHelper
 
   def new
     @apartment = Apartment.new
@@ -14,6 +14,14 @@ class ApartmentsController < ApplicationController
     binding.pry
     @apartment.save
     redirect_to apartment_path(@apartment)
+  end
+
+  def index
+    @search = Apartment.search do
+      fulltext params[:search]
+    end
+    @apartments = @search.results
+    #binding.pry
   end
 
   def show

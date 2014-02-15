@@ -1,0 +1,13 @@
+<h1>Apartments</h1>
+
+<%= form_tag apartments_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<% @apartments.each do |apartment|%>
+<br>
+<%= apartment.address %>
+<br>
+<% end %>
