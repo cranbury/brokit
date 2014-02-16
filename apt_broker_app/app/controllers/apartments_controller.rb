@@ -11,17 +11,21 @@ class ApartmentsController < ApplicationController
   def create
     @apartment = Apartment.create(apartment_params)
     @apartment.neighborhood = get_neighborhood(@apartment)
-    binding.pry
+    #binding.pry
     @apartment.save
     redirect_to apartment_path(@apartment)
   end
 
   def index
-    @search = Apartment.search do
-      fulltext params[:search]
-    end
-    @apartments = @search.results
-    #binding.pry
+    # Apartment.reindex
+    # @apartments = Apartment.search params[:search]
+    # @search = Apartment.search do
+    #   fulltext params[:search]
+    # end
+    # @apartments = @search.results
+    # @apartments = @apartments.where(bedrooms: params[:bedrooms])
+    # binding.pry
+    @apartments ||= Apartment.all
   end
 
   def show

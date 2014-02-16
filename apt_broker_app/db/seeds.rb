@@ -35,3 +35,4 @@ jose = Landlord.create(
   email: "jose@joserealty.com",
   notes: ""
   )
+
