@@ -1,12 +1,18 @@
 module SearchHelper
 
-  def search_apartment(price)
-    Apartment.search do
-      with :price.less_than_or_equal_to search[:price]
-      order_by :price, :desc
-      paginate :page => 2, :per_page => 15
-      facet :address
+  def search_apt(price, bedrooms, neighborhood)
+    @apartments = Apartment.all
+    unless price = ""
+      @apartments = @apartments.where("price <= ?", price)
     end
+    unless bedrooms = ""
+      @apartments = @apartments.where("bedrooms = ?", bedrooms)
+    end
+    unless neighborhood = ""
+      @apartments = @apartments.where("neighborhood = ?", neighborhood)
+    end
+    binding.pry
+    @apartments
   end
 
 

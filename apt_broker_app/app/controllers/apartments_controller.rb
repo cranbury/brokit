@@ -3,6 +3,7 @@ class ApartmentsController < ApplicationController
   before_action(:load_apartment, {only: [:show, :edit, :update, :destroy]})
 
   include NeighborhoodHelper
+  include SearchHelper
 
   def new
     @apartment = Apartment.new
@@ -25,7 +26,11 @@ class ApartmentsController < ApplicationController
     # @apartments = @search.results
     # @apartments = @apartments.where(bedrooms: params[:bedrooms])
     # binding.pry
-    @apartments ||= Apartment.all
+    @apartments = Apartment.all
+    if params[:price]
+      @apartments = search_apt(params[:price], params[:bedrooms], params[:neighborhood])
+    end
+
   end
 
   def show

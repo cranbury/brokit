@@ -39,8 +39,8 @@ gem 'geocoder'
 
 gem 'httparty'
 
-# gem 'sunspot_rails'
-# gem 'sunspot_solr'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 gem 'searchkick'
 
 gem 'progress_bar'

@@ -2,10 +2,14 @@
 
 <%= form_tag apartments_path, :method => :get do %>
 
-    <%= text_field_tag :search, params[:search] %>
+    <%= label_tag :price, "Price" %>
+    <%= number_field_tag :price %>
 
-    <%= label_tag :bedrooms, "Bedrooms" %>
-    <%= text_field_tag :bedrooms %>
+    <%= label_tag :bedrooms, "Bedrooms:" %>
+    <%= number_field_tag :bedrooms %>
+
+    <%= label_tag :neighborhood, "Neighborhood" %>
+    <%= text_field_tag :neighborhood %>
 
     <%= submit_tag "Search", :name => nil %>
 <% end %>

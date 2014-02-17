@@ -4,9 +4,8 @@ class Apartment < ActiveRecord::Base
 
   belongs_to :landlord
 
-  # searchable do
-  #   text :address, :neighborhood
-  #   integer :price
+  searchable do
+    text :address, :description
 
-  # end
+  end
 end
