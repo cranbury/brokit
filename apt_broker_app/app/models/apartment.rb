@@ -1,6 +1,5 @@
 class Apartment < ActiveRecord::Base
 
-  searchkick
 
   belongs_to :landlord
 

@@ -2,6 +2,9 @@
 
 <%= form_tag apartments_path, :method => :get do %>
 
+    <%= label_tag :search, "Extras" %>
+    <%= text_field_tag :search %>
+
     <%= label_tag :price, "Price" %>
     <%= number_field_tag :price %>
 
@@ -16,6 +19,6 @@
 
 <% @apartments.each do |apartment|%>
 <br>
-<%= apartment.address %>
+<%= link_to apartment.address, apartment_path(apartment.id) %>
 <br>
 <% end %>

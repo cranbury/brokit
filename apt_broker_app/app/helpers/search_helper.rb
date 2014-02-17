@@ -11,7 +11,7 @@ module SearchHelper
     unless neighborhood = ""
       @apartments = @apartments.where("neighborhood = ?", neighborhood)
     end
-    binding.pry
+    
     @apartments
   end
 

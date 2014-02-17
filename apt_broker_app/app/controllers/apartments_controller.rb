@@ -18,19 +18,15 @@ class ApartmentsController < ApplicationController
   end
 
   def index
-    # Apartment.reindex
-    # @apartments = Apartment.search params[:search]
-    # @search = Apartment.search do
-    #   fulltext params[:search]
-    # end
-    # @apartments = @search.results
-    # @apartments = @apartments.where(bedrooms: params[:bedrooms])
-    # binding.pry
-    @apartments = Apartment.all
-    if params[:price]
-      @apartments = search_apt(params[:price], params[:bedrooms], params[:neighborhood])
+    text_search = Apartment.search do
+      fulltext params[:search]
     end
+    text_matches = text_search.results
 
+    
+    @apartments = search_apt(params[:price], params[:bedrooms], params[:neighborhood])
+
+    @apartments = @apartments & text_matches
   end
 
   def show
