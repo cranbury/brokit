@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140218201714) do
+ActiveRecord::Schema.define(version: 20140218202326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140218201714) do
     t.text    "photo_url"
     t.integer "landlord_id"
     t.string  "neighborhood"
+    t.text    "status",       default: "available"
   end
 
   create_table "client_favorites", force: true do |t|
