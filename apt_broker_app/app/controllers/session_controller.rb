@@ -19,7 +19,7 @@ class SessionController < ApplicationController
     else
       # the email/password is wrong!
       flash[:notice] = "Failed Login. Try again."
-      redirect_to new_session_path
+      redirect_to login_path
     end
   end
 

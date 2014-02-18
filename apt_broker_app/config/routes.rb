@@ -8,6 +8,7 @@ AptBrokerApp::Application.routes.draw do
   post "/session", to: "session#create"
   delete "/session", to: "session#destroy"
 
+  get "/users/:id/confirm/:code", to: "users#check_code"
 
 
 

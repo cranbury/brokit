@@ -4,11 +4,11 @@
 
 Gems:
 <li>HTTParty
-<li>Sunspot?
-<li>Nokgiri?
+<li>Sunspot
+<li>Mailcatcher
 
 APIs
-<li>geocoder?
+<li>Google Static Maps
 <li>Google maps Places
 
 User Stories:

@@ -22,11 +22,9 @@ class ApartmentsController < ApplicationController
       fulltext params[:search]
     end
     text_matches = text_search.results
+    field_search = search_apt(params[:price], params[:bedrooms], params[:neighborhood])
 
-    
-    @apartments = search_apt(params[:price], params[:bedrooms], params[:neighborhood])
-
-    @apartments = @apartments & text_matches
+    @apartments = field_search & text_matches
   end
 
   def show
