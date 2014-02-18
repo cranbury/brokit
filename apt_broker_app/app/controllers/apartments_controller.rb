@@ -12,7 +12,7 @@ class ApartmentsController < ApplicationController
   def create
     @apartment = Apartment.create(apartment_params)
     @apartment.neighborhood = get_neighborhood(@apartment)
-    #binding.pry
+
     @apartment.save
     redirect_to apartment_path(@apartment)
   end

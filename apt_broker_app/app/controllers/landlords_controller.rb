@@ -1,6 +1,5 @@
 class LandlordsController < ApplicationController
   before_action :authenticate!
-  before_action(:load_apartment, {only: [:show, :edit, :update, :destroy]})
 
   include NeighborhoodHelper
   include SearchHelper
@@ -22,6 +21,16 @@ class LandlordsController < ApplicationController
 
   def show
     @landlord = Landlord.find(params[:id])
+  end
+
+  def edit
+    @landlord = Landlord.find(params[:id])
+  end
+
+  def update
+    @landlord = Landlord.find(params[:id])
+    @landlord.update(landlord_params)
+    redirect_to user_path(@user)
   end
 
 

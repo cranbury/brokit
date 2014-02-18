@@ -19,18 +19,37 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+    @user = User.find(params[:id])
+    if @user == current_user || @user.account_type == "admin"
+      render(:edit)
+    else
+      redirect_to edit_user_path(@user)
+    end
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_end_params)
+    redirect_to user_path(@user)
+  end
+
+  def user_end_params
+    params.require(:user).permit(:email, :first_name, :last_name, :password, :password_confirmation)
+  end
+
   def user_params
     params.require(:user).permit(:email, :first_name, :last_name, :account_type, :password, :password_confirmation)
   end
 
   def check_code
     user = User.find(params[:id])
-    binding.pry
     if user.confirmation_code == params[:code]
       user.confirmed = true
       user.save
+      session[:user_id] = user.id
     end
-    redirect_to user_path(user)
+    redirect_to edit_user_path(user)
   end
 
   def generate_code

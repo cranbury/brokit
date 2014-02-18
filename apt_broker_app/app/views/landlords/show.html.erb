@@ -1,0 +1,25 @@
+<br>
+Landlord Info Page
+<p>
+Name:
+<%= @landlord.name %>
+<br>
+Phone Number:
+<%= @landlord.phone_number %>
+<br>
+Email:
+<%= @landlord.email %>
+<br>
+Notes:
+<%= @landlord.notes %>
+
+</p>
+
+<p>
+  Properties:
+  <br>
+  <% @landlord.apartments.each do |apt| %>
+    <%= link_to apt.address, apartment_path(apt) %>
+    <br>
+  <% end %>
+</p>

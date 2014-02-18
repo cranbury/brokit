@@ -1,6 +1,6 @@
 <h1>Apartments</h1>
 
-<%= form_tag apartments_path, :method => :get do %>
+<%= form_tag apartments_path, method: :get do %>
 
     <%= label_tag :search, "Extras" %>
     <%= text_field_tag :search %>
@@ -14,7 +14,7 @@
     <%= label_tag :neighborhood, "Neighborhood" %>
     <%= text_field_tag :neighborhood %>
 
-    <%= submit_tag "Search", :name => nil %>
+    <%= submit_tag "Search"%>
 <% end %>
 
 <% @apartments.each do |apartment|%>
