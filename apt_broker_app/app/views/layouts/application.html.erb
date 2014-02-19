@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>AptBrokerApp</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -7,6 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
 
   <header>
     <p><%= link_to("Please Log In!","/login") if session[:user_id].nil? %></p>
