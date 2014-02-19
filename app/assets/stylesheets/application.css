@@ -13,16 +13,47 @@
  */
 body{
   padding: 20px;
+  margin-top: 150px;
+  background: url("http://www.worldpropertychannel.com/news-assets/denver-lofts-apartments-residential.jpg");
 }
 
 header {
   position: fixed;
   top: 20px;
   right: 40px;
+  background-color: rgba(233, 233, 233, .8);
 }
 
-header ul li {
+header .menu li {
   list-style-type: none;
   float: left;
-  padding-right: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-style: solid;
+  border-width: 0px 1px 0px 0px;
+  border-color: black;
+}
+
+form {
+  background-color: grey;
+  padding: 40px;
+  width: 153px;
+  height: 600px;
+}
+
+
+
+.menu li a{
+  color: black;
+  text-decoration: none;
+
+}
+
+.menu li a:hover{
+  color: rgb(66, 66, 66);
+
+}
+
+body {
+  font-family: sans-serif;
 }
