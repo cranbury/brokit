@@ -12,7 +12,7 @@ module NeighborhoodHelper
   end
 
   def get_neighborhood(apt)
-    neighborhood(ny_search("#{apt.address}, NYC, NY"))
+    neighborhood(ny_search("#{apt.address}"))
   end
 
   def google_key
