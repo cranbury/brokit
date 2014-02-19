@@ -64,7 +64,7 @@ grangers = Apartment.create(
   contact_name: "George",
   phone_number: "1111111111",
   email: "george@example.com",
-  image_url: "http://img.streeteasy.com/nyc/image/58/31808058.jpg",
+  photo_url: "http://img.streeteasy.com/nyc/image/58/31808058.jpg",
   landlord_id: Landlord.last.id,
   neighborhood: "Hell's Kitchen",
   status: "rented"
