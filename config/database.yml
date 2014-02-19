@@ -11,3 +11,12 @@ development:
   pool: 5
   timeout: 5000
 
+
+
+production:
+  adapter: postgresql
+  user: grangerabuhoff
+  host: localhost
+  database: apt_broker_db
+  pool: 5
+  timeout: 5000
