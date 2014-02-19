@@ -11,3 +11,18 @@
  *= require_self
  *= require_tree .
  */
+body{
+  padding: 20px;
+}
+
+header {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+}
+
+header ul li {
+  list-style-type: none;
+  float: left;
+  padding-right: 3px;
+}

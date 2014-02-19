@@ -41,6 +41,8 @@ gem 'httparty'
 
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem 'kaminari'
+gem 'sunspot_with_kaminari'
 gem 'searchkick'
 
 gem 'progress_bar'
