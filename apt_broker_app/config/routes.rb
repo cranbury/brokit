@@ -1,8 +1,11 @@
 AptBrokerApp::Application.routes.draw do
 
   resources :users
+  resources :clients
   resources :apartments
   resources :landlords
+
+  resources :client_favorites
 
   get "/login", to: "session#new"
   post "/session", to: "session#create"

@@ -1,0 +1,30 @@
+<%= form_for(@client) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <br>
+  <%= f.label :bedrooms_needed %>
+  <%= f.number_field :bedrooms_needed %>
+  
+  <br>
+  <%= f.label :price_limit %>
+  <%= f.number_field :price_limit %>
+
+  <br>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  <br>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <br>
+  
+  <%= f.label :notes %>
+  <%= f.text_field :notes %>
+  <br>
+
+
+  <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,4 @@
+<% @user.clients.each do |client| %>
+  <%= link_to client.name, client_path(client) %>
+  <br>
+<% end %>

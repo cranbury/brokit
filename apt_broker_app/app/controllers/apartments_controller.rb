@@ -10,7 +10,7 @@ class ApartmentsController < ApplicationController
   end
 
   def create
-    @apartment = Apartment.create(apartment_params)
+    @apartment = Apartment.new(apartment_params)
     @apartment.neighborhood = get_neighborhood(@apartment)
 
     @apartment.save
@@ -28,6 +28,22 @@ class ApartmentsController < ApplicationController
   end
 
   def show
+    @client_favorite = ClientFavorite.new
+  end
+
+  def edit
+    @apartment = Apartment.find(params[:id])
+  end
+
+  def update
+    @apartment = Apartment.find(params[:id])
+    @apartment.update(apartment_params)
+    redirect_to apartment_path(@apartment)
+  end
+
+  def destroy
+    @apartment.destroy
+    redirect_to apartments_path
   end
 
   def load_apartment

@@ -5,4 +5,8 @@ User Page
 
 
 Clients
+<% @user.clients.each do |client| %>
+  <%= link_to client.name %>
+<% end %>
+
 

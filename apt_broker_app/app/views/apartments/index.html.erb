@@ -18,7 +18,8 @@
 <% end %>
 
 <% @apartments.each do |apartment|%>
-<br>
-<%= link_to apartment.address, apartment_path(apartment.id) %>
-<br>
+  <br>
+  <%= link_to apartment.address, apartment_path(apartment.id) %>
+  status: <strong><%= apartment.status %></strong>
+  <br>
 <% end %>

@@ -9,7 +9,7 @@ class LandlordsController < ApplicationController
   end
 
   def create
-    @landlord = Landlord.create(landlord_params)
+    @landlord = Landlord.new(landlord_params)
 
     @landlord.save
     redirect_to apartment_path(@apartment)
@@ -33,6 +33,11 @@ class LandlordsController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def destroy
+    @landlord = Landlord.find(params[:id])
+    @landlord.destroy
+    redirect_to apartments_path
+  end
 
   def landlord_params
     params.require(:landlord).permit(:name, :phone_number, :email, :notes)

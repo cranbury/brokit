@@ -1,6 +1,6 @@
 module NeighborhoodHelper
   def ny_search(search)
-    HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{search.gsub(" ", "+")},+New+York,+NY&sensor=true&key=#{google_key}")
+    HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{search.gsub(" ", "+")},+NYC,+NY&sensor=true&key=#{google_key}")
   end
 
   def neighborhood(api_return)
@@ -12,7 +12,7 @@ module NeighborhoodHelper
   end
 
   def get_neighborhood(apt)
-    neighborhood(ny_search(apt.address))
+    neighborhood(ny_search("#{apt.address}, NYC, NY"))
   end
 
   def google_key
