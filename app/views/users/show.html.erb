@@ -1,0 +1,14 @@
+User Page
+
+
+<%= @user.first_name %>
+<% 5.times {%><br><% } %>
+
+Clients:
+<% @user.clients.each do |client| %>
+<br>
+  <%= link_to client.name %>
+  <br>
+<% end %>
+
+

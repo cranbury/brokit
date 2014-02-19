@@ -1,0 +1,28 @@
+<br>
+Landlord Info Page
+<p>
+  <%= button_to "Delete this landlord", landlord_path, method: :delete %>
+</p>
+<p>
+Name:
+<%= @landlord.name %>
+<br>
+Phone Number:
+<%= @landlord.phone_number %>
+<br>
+Email:
+<%= @landlord.email %>
+<br>
+Notes:
+<%= @landlord.notes %>
+
+</p>
+
+<p>
+  Apartments:
+  <br>
+  <% @landlord.apartments.each do |apt| %>
+    <%= link_to apt.address, apartment_path(apt) %>
+    <br>
+  <% end %>
+</p>

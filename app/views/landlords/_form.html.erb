@@ -1,0 +1,22 @@
+<%= form_for(@landlord) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  
+  <br>
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+  
+  <br>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <br>
+  <%= f.label :notes %>
+  <%= f.password_field :notes %>
+  <br>
+
+
+  <%= f.submit %>
+
+<% end %>

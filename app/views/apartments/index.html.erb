@@ -1,0 +1,25 @@
+<h1>Apartments</h1>
+
+<%= form_tag apartments_path, method: :get do %>
+
+    <%= label_tag :search, "Extras" %>
+    <%= text_field_tag :search %>
+
+    <%= label_tag :price, "Price" %>
+    <%= number_field_tag :price %>
+
+    <%= label_tag :bedrooms, "Bedrooms:" %>
+    <%= number_field_tag :bedrooms %>
+
+    <%= label_tag :neighborhood, "Neighborhood" %>
+    <%= text_field_tag :neighborhood %>
+
+    <%= submit_tag "Search"%>
+<% end %>
+
+<% @apartments.each do |apartment|%>
+  <br>
+  <%= link_to apartment.address, apartment_path(apartment.id) %>
+  status: <strong><%= apartment.status %></strong>
+  <br>
+<% end %>
