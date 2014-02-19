@@ -18,9 +18,10 @@ class ApartmentsController < ApplicationController
   end
 
   def index
-    text_search = Apartment.search do
-      fulltext params[:search]
-    end
+    text_search = Apartment.all
+    # text_search = Apartment.search do
+    #   fulltext params[:search]
+    # end
     text_matches = text_search.results
     field_search = search_apt(params[:price], params[:bedrooms], params[:neighborhood])
 

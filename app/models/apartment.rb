@@ -3,8 +3,8 @@ class Apartment < ActiveRecord::Base
   has_many :client_favorites, dependent: :destroy
   has_many :clients, through: :client_favorites
 
-  searchable do
-    text :address, :description
+  # searchable do
+  #   text :address, :description
 
-  end
+  # end
 end
