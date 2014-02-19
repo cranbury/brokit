@@ -13,7 +13,7 @@ AptBrokerApp::Application.routes.draw do
 
   get "/users/:id/confirm/:code", to: "users#check_code"
 
-
+  root to: "session#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

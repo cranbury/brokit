@@ -47,6 +47,8 @@ gem 'progress_bar'
 
 gem 'pry-rails', group: :development
 
+gem 'rails_12factor', group: :production
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
