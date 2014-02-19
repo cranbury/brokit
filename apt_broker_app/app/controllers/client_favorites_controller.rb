@@ -13,7 +13,6 @@ class ClientFavoritesController < ApplicationController
     @client_favorite = ClientFavorite.new(client_favorite_params)
 
     @client_favorite.save
-    binding.pry
     redirect_to apartment_path(@client_favorite.apartment_id)
   end
 
