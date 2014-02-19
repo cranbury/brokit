@@ -1,4 +1,4 @@
-<h1>Apartments</h1>
+<h1>Search Apartments</h1>
 
 <%= form_tag apartments_path, method: :get do %>
 
@@ -16,10 +16,12 @@
 
     <%= submit_tag "Search"%>
 <% end %>
-
+<div class="results">
 <% @apartments.each do |apartment|%>
   <br>
   <%= link_to apartment.address, apartment_path(apartment.id) %>
   status: <strong><%= apartment.status %></strong>
   <br>
 <% end %>
+
+</div>

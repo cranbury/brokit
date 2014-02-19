@@ -1,9 +1,7 @@
-<h1><%= @apartment.address %></h1>
+<div class="apt_show">
+  <h1><%= @apartment.address %></h1>
 <img src="<%= @apartment.photo_url %>" width="300px"/>
 
-<p>
-  <%= button_to "Delete this apartment", apartment_path, method: :delete %>
-</p>
 
 <!-- Add button to update apt status -->
 
@@ -21,20 +19,11 @@
   <li>Neighborhood <%= @apartment.neighborhood %></li>
 </ul>
 
-<p>
-  <% @apartment.client_favorites.each do |fave| %>
-    <br>
-    <%= link_to fave.client.name, client_path(fave.client) %>
 
-    <ul>
-    <li><%= "Status: #{fave.status}" %></li>
-    <li><%= "Notes: #{fave.notes}" %></li>
-    </ul>
-    <br><br>
-  <% end %>
-</p>
+  <%= button_to "Delete this apartment", apartment_path, method: :delete %>
 
-<p><%= form_for(@client_favorite) do |f| %>
+
+<%= form_for(@client_favorite) do |f| %>
   
   <%= f.hidden_field(:apartment_id, value: @apartment.id) %> 
   
@@ -48,10 +37,30 @@
   <%= f.collection_select :client_id, Client.order(:name), :id, :name, include_blank: true %>
   <br>
   <%= f.submit %>
-<% end %></p>
-  
+<% end %>
 
-  <p><img src="http://maps.googleapis.com/maps/api/staticmap?&zoom=17&size=4500x450&maptype=hybrid&markers=markerstyles|<%= "#{@apartment.address}+nyc+ny" %>|&sensor=false"></p>
+</div>
+
+
+  <% @apartment.client_favorites.each do |fave| %>
+    <br>
+    <ul class="client_faves">
+    <li><%= link_to fave.client.name, client_path(fave.client) %>
+
+    
+    <%= "Status: #{fave.status}" %>
+    <%= "Notes: #{fave.notes}" %></li>
+    </ul>
+    <br><br>
+  <% end %>
+
+
+
+<div class="map">
+
+  <img src="http://maps.googleapis.com/maps/api/staticmap?&zoom=17&size=4500x450&maptype=hybrid&markers=markerstyles|<%= "#{@apartment.address}+nyc+ny" %>|&sensor=false">
+</div>
+
 
 
 

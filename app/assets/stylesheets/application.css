@@ -34,11 +34,13 @@ header .menu li {
   border-color: black;
 }
 
+
 form {
-  background-color: grey;
+  background-color: rgba(233, 233, 233, .8);
   padding: 40px;
   width: 153px;
   height: 600px;
+  float: left;
 }
 
 
@@ -49,7 +51,17 @@ form {
 
 }
 
+li a{
+  color: black;
+  text-decoration: none;
+
+}
 .menu li a:hover{
+  color: rgb(66, 66, 66);
+
+}
+
+li a:hover{
   color: rgb(66, 66, 66);
 
 }
@@ -57,3 +69,38 @@ form {
 body {
   font-family: sans-serif;
 }
+
+.results {
+   float: center;
+   right: 40px;
+   background-color: rgba(233, 233, 233, .8);
+}
+
+.title {
+  font-family: arial-black;
+}
+
+
+.apt_show form {
+    width: 100px;
+    height: 150px;
+}
+
+.apt_show ul {
+  float: right;
+  background-color: rgba(233, 233, 233, .8);
+}
+
+.map img {
+  margin-top: 20px;
+  margin-left: 350px;
+}
+.client_faves li{
+  background-color: rgba(233, 233, 233, .8);
+ 
+}
+
+
+
+
+
