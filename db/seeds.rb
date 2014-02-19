@@ -54,22 +54,22 @@ jose = Landlord.create(
   notes: ""
   )
 
-grangers = Apartment.create(
-  address: "355 West 51st",
-  price: 2700,
-  lease_length: 13,
-  bedrooms: 2,
-  bathrooms: 1,
-  description: "recently remodeled",
-  contact_name: "George",
-  phone_number: "1111111111",
-  email: "george@example.com",
-  photo_url: "http://img.streeteasy.com/nyc/image/58/31808058.jpg",
-  landlord_id: Landlord.last.id,
-  neighborhood: "Hell's Kitchen",
-  status: "rented"
+# grangers = Apartment.create(
+#   address: "355 West 51st",
+#   price: 2700,
+#   lease_length: 13,
+#   bedrooms: 2,
+#   bathrooms: 1,
+#   description: "recently remodeled",
+#   contact_name: "George",
+#   phone_number: "1111111111",
+#   email: "george@example.com",
+#   photo_url: "http://img.streeteasy.com/nyc/image/58/31808058.jpg",
+#   landlord_id: Landlord.last.id,
+#   neighborhood: "Hell's Kitchen",
+#   status: "rented"
 
-  )
+#   )
 
 
 
