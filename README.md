@@ -17,3 +17,5 @@ https://www.pivotaltracker.com/s/projects/1015690
 
 Heroku:
 http://brokit.herokuapp.com/
+
+ERD: https://github.com/cranbury/brokit/blob/master/apt_broker_erdv2.png
