@@ -25,7 +25,7 @@ class ApartmentsController < ApplicationController
     # text_matches = text_search.results
     field_search = search_apt(params[:price], params[:bedrooms], params[:neighborhood])
 
-    @apartments = field_search & text_matches
+    @apartments = field_search
   end
 
   def show
