@@ -5,6 +5,7 @@
 Gems:
 <li>HTTParty
 <li>Sunspot
+<li>Searchkick
 <li>Mailcatcher
 
 APIs
@@ -13,3 +14,6 @@ APIs
 
 User Stories:
 https://www.pivotaltracker.com/s/projects/1015690
+
+Heroku:
+http://brokit.herokuapp.com/
