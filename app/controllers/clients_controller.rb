@@ -3,7 +3,6 @@ class ClientsController < ApplicationController
  before_action :authenticate!
 
   include NeighborhoodHelper
-  include SearchHelper
 
   def new
     @client = Client.new

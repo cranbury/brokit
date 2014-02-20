@@ -3,7 +3,7 @@ class ClientFavoritesController < ApplicationController
  before_action :authenticate!
 
   include NeighborhoodHelper
-  include SearchHelper
+
 
   def new
     @client_favorite = ClientFavorite.new

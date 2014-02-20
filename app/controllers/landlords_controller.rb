@@ -2,7 +2,6 @@ class LandlordsController < ApplicationController
   before_action :authenticate!
 
   include NeighborhoodHelper
-  include SearchHelper
 
   def new
     @landlord = Landlord.new
