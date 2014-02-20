@@ -3,7 +3,7 @@ class ApartmentsController < ApplicationController
   before_action(:load_apartment, {only: [:show, :edit, :update, :destroy]})
 
   include NeighborhoodHelper
-  include SearchHelper
+
 
   def new
     @apartment = Apartment.new
@@ -19,13 +19,12 @@ class ApartmentsController < ApplicationController
 
   def index
     text_search = Apartment.all
-    # text_search = Apartment.search do
-    #   fulltext params[:search]
-    # end
-    # text_matches = text_search.results
-    field_search = search_apt(params[:price], params[:bedrooms], params[:neighborhood])
 
-    @apartments = field_search #& other resultst
+    criteria = {price: (0..(params[:price].to_i)), bedrooms: params[:bedrooms], neighborhood: params[:neighborhood]}
+    criteria.delete_if {|k,v| v.blank?}
+    attr_search_results = Apartment.where(criteria)
+ 
+    @apartments = attr_search_results #& other resultst
   end
 
   def show
