@@ -18,13 +18,16 @@ class ApartmentsController < ApplicationController
   end
 
   def index
-    text_search = Apartment.all
-
     criteria = {price: (0..(params[:price].to_i)), bedrooms: params[:bedrooms], neighborhood: params[:neighborhood]}
     criteria.delete_if {|k,v| v.blank?}
     attr_search_results = Apartment.where(criteria)
+    attr_search_results = Apartment.all if attr_search_results.blank?
+
+    text_search = "%#{params[:search]}%"
+    text_results = Apartment.where('address like ? OR description like ?', text_search, text_search)
+
  
-    @apartments = attr_search_results #& other resultst
+    @apartments = attr_search_results & text_results
   end
 
   def show
