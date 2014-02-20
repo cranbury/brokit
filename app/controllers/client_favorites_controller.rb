@@ -19,6 +19,7 @@ class ClientFavoritesController < ApplicationController
   def destroy
     client_num = params[:client_id]
     ClientFavorite.find(params[:id]).destroy
+    binding.pry
     redirect_to client_path(params[client_num])
   end
 
