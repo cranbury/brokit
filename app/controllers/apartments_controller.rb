@@ -31,7 +31,7 @@ class ApartmentsController < ApplicationController
     text_search = "%#{params[:search]}%"
     text_results = Apartment.where('address like ? OR description like ?', text_search, text_search)
 
-    binding.pry
+    #binding.pry
  
     @apartments = attr_search_results & text_results
   end
