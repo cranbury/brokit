@@ -47,9 +47,20 @@ gem 'searchkick'
 
 gem 'progress_bar'
 
-gem 'pry-rails', group: :development
 
 gem 'rails_12factor', group: :production
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+end
+
+gem 'simplecov', :require => false, :group => :test
 
 
 # Use unicorn as the app server

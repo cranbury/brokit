@@ -17,6 +17,19 @@ body{
   background: url("http://www.worldpropertychannel.com/news-assets/denver-lofts-apartments-residential.jpg");
 }
 
+a {
+  text-decoration: none;
+  color: #044559;
+}
+
+a:hover {
+  color: #004C35;
+}
+
+a:visited {
+  color: #056361;
+}
+
 header {
   position: fixed;
   top: 20px;

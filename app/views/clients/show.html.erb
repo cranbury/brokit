@@ -27,10 +27,10 @@ Notes:
   <% @client.client_favorites.each do |fav| %>
     <%= link_to fav.apartment.address, apartment_path(fav.apartment) %>
       status: <strong><%= fav.apartment.status %></strong>
-<%= form_tag client_favorite_path(fav), method: "delete" do %>
-  <%= hidden_field_tag :client_id, @client.id %>
-  <%= submit_tag("Remove from Favorites") %>
-<% end %>
+    <%= form_tag client_favorite_path(fav), method: "delete" do %>
+      <%= hidden_field_tag :client_id, @client.id %>
+      <%= submit_tag("Remove from Favorites") %>
+    <% end %>
     <br>
   <% end %>
 </p>

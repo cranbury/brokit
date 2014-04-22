@@ -19,3 +19,11 @@ production:
   database: apt_broker_db
   pool: 5
   timeout: 5000
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: brokr_test
+  pool: 5
+  username: grangerabuhoff
+  host: localhost
