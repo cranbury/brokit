@@ -20,7 +20,7 @@ class ClientFavoritesController < ApplicationController
     client_num = params[:client_id]
     ClientFavorite.find(params[:id]).destroy
     #binding.pry
-    redirect_to client_path(params[client_num])
+    redirect_to "/"
   end
 
   # def index
